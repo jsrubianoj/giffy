@@ -15,8 +15,10 @@ export default function App() {
       suscribeteAlCanal:true}}>
     <div className="App">
       <section className="App-content">
-        <Link to="/">
-          <img className="App-logo" alt='Giffy logo' src='/logo.png'/>
+        <Link href="/">
+          <a>
+          <img className="App-logo" alt='Giffy logo' src='/logo.png'/>    
+          </a>
         </Link>
         <GifsContextProvider>
           <Route
