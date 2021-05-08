@@ -13,19 +13,23 @@ export default function SearchResults ({ params }) {
     externalRef: loading ? null : externalRef,
     once: false
   })
-  const debounceHandleNextPage =useRef()
-  console.log(isNearScreen)
+
+  
+
 
   //const handleNextPage=()=>setPage(prevPage=>prevPage+1)
 
-  const handleNextPage=()=>console.log('next page')
+  //const handleNextPage=()=>console.log('next page')
 
-  debounceHandleNextPage.current=()=>debounce(
-    ()=> console.log('next page'),1000
-)
+  const debounceHandleNextPage=useCallback(debounce(
+    ()=>setPage(prevPage=>prevPage+1),200
+),[])
+
   useEffect(function(){
-    if(isNearScreen) debounceHandleNextPage.current()
-  })
+    console.log(isNearScreen)
+    if(isNearScreen) debounceHandleNextPage()
+  },[debounceHandleNextPage,isNearScreen])
+  
   return <>
     {loading
       ? <Spinner />
