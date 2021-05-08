@@ -14,13 +14,6 @@ export default function SearchResults ({ params }) {
     once: false
   })
 
-  
-
-
-  //const handleNextPage=()=>setPage(prevPage=>prevPage+1)
-
-  //const handleNextPage=()=>console.log('next page')
-
   const debounceHandleNextPage=useCallback(debounce(
     ()=>setPage(prevPage=>prevPage+1),200
 ),[])
