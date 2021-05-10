@@ -6,7 +6,7 @@ const fromApiResponseToGifs = apiResponse => {
     const gifs = data.map(image => {
       const {images, title, id} = image
       const { url } = images.downsized_medium
-      return { title, id, url }
+      return { title, id, url}
     })
     return gifs
   }
@@ -15,7 +15,7 @@ const fromApiResponseToGifs = apiResponse => {
 
 export default function getGifs({
   limit = 15,
-  rating = "g",
+  rating = 'g',
   keyword = "morty",
   page = 0,
 } = {}) {
